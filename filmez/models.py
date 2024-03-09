@@ -6,7 +6,7 @@ from uuid import uuid4
 class Filmes(models.Model):
         id_filmes = models.UUIDField(primary_key = True, default = uuid4, editable = False)
         title = models.CharField(max_length = 255)
-        year = models.IntegerField()
-        runtime = models.IntegerField()
+        year = models.CharField(max_length = 255)
+        runtime = models.CharField(max_length = 255)
         genre = models.CharField(max_length = 255)
         director = models.CharField(max_length = 255)
