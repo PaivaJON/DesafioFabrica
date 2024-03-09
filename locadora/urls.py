@@ -23,7 +23,7 @@ from filmez.api import viewsets as filmesviewsets
 
 route = routers.DefaultRouter()
 
-route.register(r'filmez/', filmesviewsets.FilmesViewSet, basename = "Filmes")
+route.register(r'filmez', filmesviewsets.FilmesViewSet, basename = "Filmes")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
