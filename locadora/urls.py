@@ -21,7 +21,7 @@ from rest_framework import routers
 
 from filmez.api import viewsets as filmesviewsets
 
-route = routers.DefaultRouter
+route = routers.DefaultRouter()
 
 route.register(r'filmez/', filmesviewsets.FilmesViewSet, basename = "Filmes")
 
