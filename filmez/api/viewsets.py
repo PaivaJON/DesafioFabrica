@@ -24,6 +24,14 @@ class FilmesViewSet(viewsets.ModelViewSet):
             runtime = dados.get('Runtime', '')
             genre = dados.get('Genre', '')
             director = dados.get('Director', '')
+            print(title)
+            if(title == ''):
+                title = request.data.get('title', '')
+                year = request.data.get('year', '')
+                runtime = request.data.get('runtime', '')
+                genre = request.data.get('genre', '')
+                director = request.data.get('director', '')
+
 
             print(f"Movie Title: {title}")
             print(f"Year: {year}")
@@ -47,3 +55,5 @@ class FilmesViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
+        else:
+            return Response({"erro":"Campo Vazio"})
